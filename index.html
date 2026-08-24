@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SR-QA Insight - Dashboard Penjaminan Mutu & Analitik Prediktif</title>
     
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/Logo-Sekolah-Rakyat-Putih.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/Logo-Sekolah-Rakyat-Putih.png">
-    <link rel="shortcut icon" type="image/png" href="assets/Logo-Sekolah-Rakyat-Putih.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/Logo-Sekolah-Rakyat-Putih.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/Logo-Sekolah-Rakyat-Putih.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/Logo-Sekolah-Rakyat-Putih.png">
+    <link rel="shortcut icon" type="image/png" href="/assets/Logo-Sekolah-Rakyat-Putih.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/Logo-Sekolah-Rakyat-Putih.png">
     
     <meta name="theme-color" content="#4f46e5">
     <meta name="msapplication-TileColor" content="#4f46e5">
@@ -267,12 +266,12 @@
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="logo-container" id="logoBox">
-                    <img src="assets/Logo-Sekolah-Rakyat-Putih.png" 
+                    <img src="/assets/Logo-Sekolah-Rakyat-Putih.png" 
                          alt="Logo Sekolah Rakyat" 
                          id="logoDark"
                          class="logo-dark"
                          onerror="handleLogoError('dark')">
-                    <img src="assets/Logo-Sekolah-Rakyat-Hitam.png" 
+                    <img src="/assets/Logo-Sekolah-Rakyat-Hitam.png" 
                          alt="Logo Sekolah Rakyat" 
                          id="logoLight"
                          class="logo-light"
@@ -314,7 +313,7 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-2">
                     <i data-lucide="bar-chart-3" class="w-5 h-5 text-sky-400"></i>
-                    <h2 class="font-semibold text-base text-slate-200">Statistik Makro Penyelenggaraan Sekolah Rakyat</h2>
+                    <h2 class="font-semibold text-base text-slate-200">Statistik Makro Pendidikan Sekolah Rakyat</h2>
                 </div>
                 <span class="text-xs text-slate-400">Data Terintegrasi Dapodik dan DTSEN • Per 14 Agustus 2026</span>
             </div>
@@ -1034,7 +1033,7 @@
             siti: {
                 id: '#SR-9921', name: 'Siti Aminah', age: 14,
                 location: 'Kec. Cicalengka, Kab. Bandung',
-                riskScore: 0.92, anomaly: 'NIK Ganda (DTSEN Kab. Garut)',
+                riskScore: 0.92, anomaly: 'NIK Ganda (DTKS Kab. Garut)',
                 anomalyType: 'NIK Ganda', severity: 'rose',
                 lmsActivity: '12% (Kritis)', cluster: 'Butuh Pendampingan',
                 report: `📋 <b>LAPORAN INTERVENSI DINI — SR-QA INSIGHT</b><br>
@@ -1042,7 +1041,7 @@
 📍 Kec. Cicalengka, Kab. Bandung<br><br>
 <b>🔍 DIAGNOSIS AI:</b><br>
 Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
-1. <b>Anomali Data:</b> NIK tercatat ganda di DTSEN Kab. Bandung & Kab. Garut.<br>
+1. <b>Anomali Data:</b> NIK tercatat ganda di DTKS Kab. Bandung & Kab. Garut.<br>
 2. <b>Engagement:</b> LMS turun 80% dalam 14 hari (62% → 12%).<br>
 3. <b>Absensi:</b> Tidak hadir 9 dari 12 hari sekolah.<br><br>
 <b>🎯 REKOMENDASI (SOP Dinsos):</b><br>
@@ -1055,14 +1054,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             budi: {
                 id: '#SR-8812', name: 'Budi Santoso', age: 15,
                 location: 'Kec. Wamena, Kab. Jayawijaya (3T)',
-                riskScore: 0.78, anomaly: 'Domisili Invalid (DTSEN Jayapura)',
+                riskScore: 0.78, anomaly: 'Domisili Invalid (DTKS Jayapura)',
                 anomalyType: 'Domisili Invalid', severity: 'amber',
                 lmsActivity: '28% (Rendah)', cluster: 'Perlu Aksesibilitas Digital',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-8812 | Budi Santoso (15 th)<br>
 📍 Kec. Wamena, Kab. Jayawijaya (3T)<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.78)</b>.<br>
-1. Domisili Wamena, DTSEN terdaftar Jayapura.<br>
+1. Domisili Wamena, DTKS terdaftar Jayapura.<br>
 2. Wilayah 3T dengan konektivitas &lt;2 Mbps.<br>
 3. Login LMS hanya 22:00-00:00 (keterbatasan kuota).<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1115,18 +1114,18 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             rizky: {
                 id: '#SR-3456', name: 'Rizky Pratama', age: 16,
                 location: 'Kec. Maratua, Kab. Berau, Kalimantan Timur',
-                riskScore: 0.88, anomaly: 'Data Ganda DTSEN',
-                anomalyType: 'DTSEN Ganda', severity: 'amber',
+                riskScore: 0.88, anomaly: 'Data Ganda DTKS',
+                anomalyType: 'DTKS Ganda', severity: 'amber',
                 lmsActivity: '15% (Kritis)', cluster: 'Wilayah 3T',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-3456 | Rizky Pratama (16 th)<br>
 📍 Kec. Maratua, Kab. Berau (Pulau Kecil)<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.88)</b>.<br>
-1. Data ganda di DTSEN ( tercatat 2 keluarga asuh).<br>
+1. Data ganda di DTKS ( tercatat 2 keluarga asuh).<br>
 2. Lokasi pulau kecil, akses terbatas.<br>
 3. Hanya 15% interaksi LMS (keterbatasan sinyal).<br><br>
 <b>🎯 REKOMENDASI:</b><br>
-✅ Verifikasi silang DTSEN Berau.<br>
+✅ Verifikasi silang DTKS Berau.<br>
 ✅ Berikan perangkat tablet + solar charger.<br>
 ✅ Subsidi kuota satelit.<br>
 ✅ Pendampingan guru keliling.<br>
@@ -1162,7 +1161,7 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
 🆔 #SR-5891 | Agus Setiawan (15 th)<br>
 📍 Kec. Muting, Kab. Merauke (Perbatasan PNG)<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>SANGAT TINGGI (0.94)</b>.<br>
-1. Domisili sekolah Merauke, DTSEN Boven Digoel.<br>
+1. Domisili sekolah Merauke, DTKS Boven Digoel.<br>
 2. Lokasi perbatasan dengan sinyal minim.<br>
 3. Hanya 5% interaksi LMS (sangat kritis).<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1195,14 +1194,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             firman: {
                 id: '#SR-7294', name: 'Firman Hidayat', age: 14,
                 location: 'Kec. Palu Barat, Kota Palu',
-                riskScore: 0.82, anomaly: 'NIK Ganda (DTSEN Jakarta)',
+                riskScore: 0.82, anomaly: 'NIK Ganda (DTKS Jakarta)',
                 anomalyType: 'NIK Ganda', severity: 'rose',
                 lmsActivity: '22% (Kritis)', cluster: 'Bantuan Ekonomi',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-7294 | Firman Hidayat (14 th)<br>
 📍 Kec. Palu Barat, Kota Palu<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.82)</b>.<br>
-1. NIK tercatat di DTSEN Palu & Jakarta Utara.<br>
+1. NIK tercatat di DTKS Palu & Jakarta Utara.<br>
 2. Keluarga pasca-bencana Sulteng 2018.<br>
 3. Tidak pernah submit tugas LMS.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1235,14 +1234,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             doni: {
                 id: '#SR-9632', name: 'Doni Irawan', age: 16,
                 location: 'Kec. Medan Labuhan, Kota Medan',
-                riskScore: 0.89, anomaly: 'Data Ganda DTSEN',
-                anomalyType: 'DTSEN Ganda', severity: 'rose',
+                riskScore: 0.89, anomaly: 'Data Ganda DTKS',
+                anomalyType: 'DTKS Ganda', severity: 'rose',
                 lmsActivity: '11% (Kritis)', cluster: 'Bantuan Ekonomi',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-9632 | Doni Irawan (16 th)<br>
 📍 Kec. Medan Labuhan, Kota Medan<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.89)</b>.<br>
-1. Ganda di DTSEN Medan & Deli Serdang.<br>
+1. Ganda di DTKS Medan & Deli Serdang.<br>
 2. Bekerja paruh waktu di pelabuhan.<br>
 3. Engagement LMS sangat rendah (11%).<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1262,7 +1261,7 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
 🆔 #SR-1357 | Maya Puspita (13 th)<br>
 📍 Kec. Kupang Tengah, Kab. Kupang, NTT<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.77)</b>.<br>
-1. Domisili Kupang, DTSEN Alor.<br>
+1. Domisili Kupang, DTKS Alor.<br>
 2. Keluarga migran musiman.<br>
 3. LMS 25%, akses internet tidak stabil.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1275,14 +1274,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             heru: {
                 id: '#SR-2580', name: 'Heru Prabowo', age: 14,
                 location: 'Kec. Cilincing, Jakarta Utara',
-                riskScore: 0.84, anomaly: 'NIK Ganda (DTSEN Bekasi)',
+                riskScore: 0.84, anomaly: 'NIK Ganda (DTKS Bekasi)',
                 anomalyType: 'NIK Ganda', severity: 'rose',
                 lmsActivity: '19% (Kritis)', cluster: 'Butuh Pendampingan',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-2580 | Heru Prabowo (14 th)<br>
 📍 Kec. Cilincing, Jakarta Utara<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.84)</b>.<br>
-1. NIK ganda di DTSEN Jakut & Bekasi.<br>
+1. NIK ganda di DTKS Jakut & Bekasi.<br>
 2. Keluarga pemulung di TPST Bantargebang.<br>
 3. LMS 19%, absensi tinggi.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1362,7 +1361,7 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
 🆔 #SR-6024 | Reza Mahendra (16 th)<br>
 📍 Kec. Tembagapura, Kab. Mimika (Zona Tambang)<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>SANGAT TINGGI (0.93)</b>.<br>
-1. Domisili zona tambang, DTSEN Agimuga.<br>
+1. Domisili zona tambang, DTKS Agimuga.<br>
 2. Akses internet sangat terbatas.<br>
 3. LMS 7%, hampir dropout total.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1375,14 +1374,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             linda: {
                 id: '#SR-7135', name: 'Linda Kusuma', age: 14,
                 location: 'Kec. Pontianak Tenggara, Kota Pontianak',
-                riskScore: 0.74, anomaly: 'Data Ganda DTSEN',
-                anomalyType: 'DTSEN Ganda', severity: 'amber',
+                riskScore: 0.74, anomaly: 'Data Ganda DTKS',
+                anomalyType: 'DTKS Ganda', severity: 'amber',
                 lmsActivity: '36% (Rendah)', cluster: 'Bantuan Ekonomi',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-7135 | Linda Kusuma (14 th)<br>
 📍 Kec. Pontianak Tenggara, Kota Pontianak<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.74)</b>.<br>
-1. Ganda di DTSEN Pontianak & Kubu Raya.<br>
+1. Ganda di DTKS Pontianak & Kubu Raya.<br>
 2. Keluarga nelayan tradisional.<br>
 3. LMS 36%, aktif saat cuaca buruk.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1435,14 +1434,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             andi: {
                 id: '#SR-1468', name: 'Andi Saputra', age: 14,
                 location: 'Kec. Mandai, Kab. Maros, Sulawesi Selatan',
-                riskScore: 0.81, anomaly: 'NIK Ganda (DTSEN Gowa)',
+                riskScore: 0.81, anomaly: 'NIK Ganda (DTKS Gowa)',
                 anomalyType: 'NIK Ganda', severity: 'rose',
                 lmsActivity: '21% (Kritis)', cluster: 'Bantuan Ekonomi',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-1468 | Andi Saputra (14 th)<br>
 📍 Kec. Mandai, Kab. Maros, Sulsel<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.81)</b>.<br>
-1. NIK ganda di DTSEN Maros & Gowa.<br>
+1. NIK ganda di DTKS Maros & Gowa.<br>
 2. Anak pekerja bandara.<br>
 3. LMS 21%, sering offline.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1475,14 +1474,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             joko: {
                 id: '#SR-3680', name: 'Joko Susilo', age: 16,
                 location: 'Kec. Semarang Barat, Kota Semarang',
-                riskScore: 0.75, anomaly: 'Data Ganda DTSEN',
-                anomalyType: 'DTSEN Ganda', severity: 'amber',
+                riskScore: 0.75, anomaly: 'Data Ganda DTKS',
+                anomalyType: 'DTKS Ganda', severity: 'amber',
                 lmsActivity: '34% (Rendah)', cluster: 'Bantuan Ekonomi',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-3680 | Joko Susilo (16 th)<br>
 📍 Kec. Semarang Barat, Kota Semarang<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.75)</b>.<br>
-1. Ganda di DTSEN Semarang & Demak.<br>
+1. Ganda di DTKS Semarang & Demak.<br>
 2. Anak buruh pelabuhan Tanjung Emas.<br>
 3. LMS 34%, bekerja paruh waktu.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1502,7 +1501,7 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
 🆔 #SR-4791 | Nia Kurniawati (14 th)<br>
 📍 Kec. Mataram, Kota Mataram, NTB<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.80)</b>.<br>
-1. Domisili Mataram, DTSEN Lombok Utara (pasca gempa).<br>
+1. Domisili Mataram, DTKS Lombok Utara (pasca gempa).<br>
 2. Keluarga masih di hunian sementara.<br>
 3. LMS 24%, trauma masih terasa.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1927,6 +1926,5 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             if (e.key === 'Enter') sendChat();
         });
     </script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"21fe9fd751fc42d7a3bf0277c247f55c","r":1}' crossorigin="anonymous"></script>
 </body>
 </html>
