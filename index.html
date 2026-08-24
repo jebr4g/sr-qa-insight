@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SR-QA Insight - Dashboard Penjaminan Mutu & Analitik Prediktif</title>
     
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/Logo-Sekolah-Rakyat-Putih.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/Logo-Sekolah-Rakyat-Putih.png">
-    <link rel="shortcut icon" type="image/png" href="/assets/Logo-Sekolah-Rakyat-Putih.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/Logo-Sekolah-Rakyat-Putih.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/Logo-Sekolah-Rakyat-Putih.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/Logo-Sekolah-Rakyat-Putih.png">
+    <link rel="shortcut icon" type="image/png" href="assets/Logo-Sekolah-Rakyat-Putih.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/Logo-Sekolah-Rakyat-Putih.png">
     
     <meta name="theme-color" content="#4f46e5">
     <meta name="msapplication-TileColor" content="#4f46e5">
-    <meta name="description" content="SR-QA Insight - Dashboard Penjaminan Mutu Sistem & Analitik Prediktif Sekolah Rakyat berbasis AI untuk mendukung Generasi Emas 2045">
+    <meta name="description" content="SR-QA Insight - Dashboard Penjaminan Mutu Sistem, Perangkingan MPI Calon Siswa & Analitik Prediktif Sekolah Rakyat">
     <meta name="application-name" content="SR-QA Insight">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -258,6 +258,10 @@
         .log-item:hover {
             transform: translateX(2px);
         }
+
+        .cutoff-line {
+            background: linear-gradient(90deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.8), rgba(239, 68, 68, 0.2));
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans min-h-screen">
@@ -266,12 +270,12 @@
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="logo-container" id="logoBox">
-                    <img src="/assets/Logo-Sekolah-Rakyat-Putih.png" 
+                    <img src="assets/Logo-Sekolah-Rakyat-Putih.png" 
                          alt="Logo Sekolah Rakyat" 
                          id="logoDark"
                          class="logo-dark"
                          onerror="handleLogoError('dark')">
-                    <img src="/assets/Logo-Sekolah-Rakyat-Hitam.png" 
+                    <img src="assets/Logo-Sekolah-Rakyat-Hitam.png" 
                          alt="Logo Sekolah Rakyat" 
                          id="logoLight"
                          class="logo-light"
@@ -283,7 +287,7 @@
                     <h1 class="font-bold text-lg leading-tight">SR-QA INSIGHT</h1>
                     <p class="text-xs text-slate-400 leading-tight">Penjaminan Mutu Sistem & Analitik Prediktif Sekolah Rakyat</p>
                     
-                    <div class="flex items-center flex-wrap gap-2 mt-1.5 text-[10px]">
+                    <div class="hidden md:flex items-center flex-wrap gap-2 mt-1.5 text-[10px]">
                         <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
                             AI Engine: Active
@@ -291,6 +295,10 @@
                         <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">
                             <i data-lucide="sparkles" class="w-2.5 h-2.5 mr-1"></i>
                             GenAI: Online
+                        </span>
+                        <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                            <i data-lucide="award" class="w-2.5 h-2.5 mr-1"></i>
+                            MPI Ranking: Ready
                         </span>
                     </div>
                 </div>
@@ -313,7 +321,7 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-2">
                     <i data-lucide="bar-chart-3" class="w-5 h-5 text-sky-400"></i>
-                    <h2 class="font-semibold text-base text-slate-200">Statistik Makro Pendidikan Sekolah Rakyat</h2>
+                    <h2 class="font-semibold text-base text-slate-200">Statistik Makro Penyelenggaraan Sekolah Rakyat</h2>
                 </div>
                 <span class="text-xs text-slate-400">Data Terintegrasi Dapodik dan DTSEN • Per 14 Agustus 2026</span>
             </div>
@@ -433,17 +441,16 @@
 
             <div class="bg-slate-800 border border-slate-700 rounded-xl p-4 flex items-center justify-between">
                 <div>
-                    <p class="text-xs text-slate-400 font-medium">Klaster Wilayah Prioritas (K-Means)</p>
-                    <p class="text-2xl font-bold text-indigo-400 mt-1">Zone 3 (Timur)</p>
-                    <p class="text-[10px] text-slate-400 mt-1">Alokasi infrastruktur digital ditingkatkan</p>
+                    <p class="text-xs text-slate-400 font-medium">Prioritas Seleksi (MPI Score)</p>
+                    <p class="text-2xl font-bold text-cyan-400 mt-1">84.2 Rata-rata</p>
+                    <p class="text-[10px] text-slate-400 mt-1">1.250 Pendaftar Oversubscribed</p>
                 </div>
-                <div class="p-3 bg-indigo-500/10 text-indigo-400 rounded-lg">
-                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                <div class="p-3 bg-cyan-500/10 text-cyan-400 rounded-lg">
+                    <i data-lucide="award" class="w-5 h-5"></i>
                 </div>
             </div>
         </div>
 
-        <!-- Section 1: Ranah AI Penjaminan Mutu Sistem & Data -->
         <div class="space-y-4">
             <div class="flex items-center space-x-2 border-b border-slate-800 pb-2">
                 <i data-lucide="cpu" class="w-5 h-5 text-indigo-400"></i>
@@ -472,10 +479,7 @@
                         </div>
                         <p class="text-xs text-slate-400 mb-3">Pemeriksaan otomatis NIK ganda, manipulasi, dan format invalid</p>
                         
-                        <!-- ANOMALY LIST - 25 SISWA -->
-                        <div id="anomalyList" class="space-y-2 overflow-y-auto max-h-96 pr-1">
-                            <!-- Items akan di-generate via JavaScript -->
-                        </div>
+                        <div id="anomalyList" class="space-y-2 overflow-y-auto max-h-96 pr-1"></div>
                     </div>
                     <button class="w-full mt-3 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 rounded-lg text-xs font-medium transition">
                         Jalankan Automated QA Scan (Isolation Forest)
@@ -484,7 +488,6 @@
             </div>
         </div>
 
-        <!-- Section 2: Ranah AI Analitik Prediktif Siswa -->
         <div class="space-y-4">
             <div class="flex items-center space-x-2 border-b border-slate-800 pb-2">
                 <i data-lucide="graduation-cap" class="w-5 h-5 text-emerald-400"></i>
@@ -538,12 +541,105 @@
             </div>
         </div>
 
-        <!-- SECTION 3: GENERATIVE AI -->
+        <div class="space-y-4" id="mpiDashboard">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="award" class="w-5 h-5 text-cyan-400"></i>
+                    <h2 class="font-semibold text-base text-slate-200">3. Perangkingan Calon Siswa Berbasis Multidimensional Poverty Index (MPI)</h2>
+                    <span class="text-[10px] bg-cyan-500 text-slate-950 font-bold px-1.5 py-0.5 rounded">Direktorat PSNK</span>
+                </div>
+                <span class="text-xs text-slate-400">Algoritma Penentuan Prioritas Paling Membutuhkan Sekolah Rakyat</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-4">
+                    <p class="text-xs text-slate-400 font-medium">Total Pendaftar Terverifikasi</p>
+                    <p class="text-2xl font-bold text-slate-100 mt-1">1.250 Anak</p>
+                    <p class="text-[10px] text-cyan-400 mt-1">Target Kuota Keseluruhan: 500 Siswa</p>
+                </div>
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-4">
+                    <p class="text-xs text-slate-400 font-medium">Prioritas 1 (Sangat Mendesak)</p>
+                    <p class="text-2xl font-bold text-rose-400 mt-1">310 Anak</p>
+                    <p class="text-[10px] text-slate-400 mt-1">Skor MPI ≥ 80.0 (Otomatis Lolos Kuota)</p>
+                </div>
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-4">
+                    <p class="text-xs text-slate-400 font-medium">Prioritas 2 (Mendesak / Cadangan)</p>
+                    <p class="text-2xl font-bold text-amber-400 mt-1">450 Anak</p>
+                    <p class="text-[10px] text-slate-400 mt-1">Skor MPI 65.0 - 79.9</p>
+                </div>
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-4">
+                    <p class="text-xs text-slate-400 font-medium">Rasio Oversubscribed</p>
+                    <p class="text-2xl font-bold text-violet-400 mt-1">250%</p>
+                    <p class="text-[10px] text-emerald-400 mt-1">100% Bebas Intervensi Manual</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-5 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-medium text-sm text-slate-200">Profil Deprivasi Pendaftar</h3>
+                            <p class="text-xs text-slate-400" id="mpiCandidateName">Calon: #SR-REG-001 (Asep Kurnia)</p>
+                        </div>
+                        <span class="text-xs bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 px-2 py-0.5 rounded">5-Dimensi MPI</span>
+                    </div>
+                    <div class="h-64 flex items-center justify-center">
+                        <canvas id="mpiRadarChart"></canvas>
+                    </div>
+                    <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-700 text-xs space-y-1">
+                        <p class="font-semibold text-cyan-400">Indikator Utama Kemiskinan Multidimensi:</p>
+                        <p class="text-slate-400">• <b class="text-slate-200">Sosial (30%)</b>: Status Desil DTSEN dan Bantuan Sosial</p>
+                        <p class="text-slate-400">• <b class="text-slate-200">Pendidikan (25%)</b>: Status ATS dan Lama Putus Sekolah</p>
+                        <p class="text-slate-400">• <b class="text-slate-200">Ekonomi (20%)</b>: Pekerjaan Wali dan Rasio Ketergantungan</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 bg-slate-800 border border-slate-700 rounded-xl p-5 space-y-4">
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <div>
+                            <h3 class="font-medium text-sm text-slate-200">Tabel Urutan Prioritas Pendaftar (MPI Auto-Ranking)</h3>
+                            <p class="text-xs text-slate-400">Sistem otomatis mengurutkan pendaftar yang paling membutuhkan bantuan sekolah</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <select id="mpiSchoolFilter" onchange="filterMPITable()" class="bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-200 focus:border-cyan-500 focus:outline-none">
+                                <option value="all">Semua Sekolah Tujuan</option>
+                                <option value="SR Bandung">SR Bandung Utama</option>
+                                <option value="SR Jayapura">SR Jayapura 3T</option>
+                                <option value="SR Medan">SR Medan Pesisir</option>
+                            </select>
+                            <button onclick="exportMPIList()" class="px-3 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-semibold rounded-lg text-xs transition flex items-center">
+                                <i data-lucide="file-spread-sheet" class="w-3.5 h-3.5 mr-1"></i>
+                                Ekspor SK
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs">
+                            <thead class="bg-slate-900/80 text-slate-400 uppercase tracking-wider border-b border-slate-700">
+                                <tr>
+                                    <th class="py-2.5 px-3">Rank</th>
+                                    <th class="py-2.5 px-3">Pendaftar</th>
+                                    <th class="py-2.5 px-3">Sekolah Tujuan</th>
+                                    <th class="py-2.5 px-3">Desil DTSEN</th>
+                                    <th class="py-2.5 px-3">Skor MPI</th>
+                                    <th class="py-2.5 px-3">Status Penerimaan</th>
+                                    <th class="py-2.5 px-3 text-right">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mpiTableBody" class="divide-y divide-slate-700/50">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="space-y-4">
             <div class="flex items-center justify-between border-b border-slate-800 pb-2">
                 <div class="flex items-center space-x-2">
                     <i data-lucide="sparkles" class="w-5 h-5 text-purple-400"></i>
-                    <h2 class="font-semibold text-base text-slate-200">3. Generative AI (LLM Integration)</h2>
+                    <h2 class="font-semibold text-base text-slate-200">4. Generative AI (LLM Integration)</h2>
                     <span class="text-[10px] bg-purple-500 text-white font-bold px-1.5 py-0.5 rounded">NEW</span>
                 </div>
                 <span class="text-xs text-slate-400">Powered by Local LLM (Llama-3-8B) + RAG Pipeline</span>
@@ -561,8 +657,7 @@
                         <div>
                             <label class="text-[10px] text-slate-500 uppercase tracking-wider">Pilih Profil Siswa (25 Siswa Flagged)</label>
                             <select id="studentSelect" onchange="updateContext()" class="w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200 focus:border-purple-500 focus:outline-none">
-                                <!-- Options akan di-generate via JavaScript -->
-                            </select>
+                                </select>
                         </div>
 
                         <div class="bg-slate-900/60 border border-slate-700 rounded-lg p-3 space-y-2 text-xs" id="contextData">
@@ -591,7 +686,7 @@
                         <div class="pt-2">
                             <label class="text-[10px] text-slate-500 uppercase tracking-wider">Sistem Prompt</label>
                             <div class="mt-1 bg-slate-900/60 border border-slate-700 rounded-lg p-2 text-[10px] text-slate-400 font-mono leading-relaxed max-h-24 overflow-y-auto">
-                                "Anda adalah asisten AI untuk pekerja sosial Kemensos. Hasilkan laporan intervensi yang actionable, empatik, dan sesuai SOP Dinsos. Fokus pada akar masalah dan langkah konkret."
+                                "Anda adalah asisten AI untuk pekerja sosial Kemensos. Hasilakan laporan intervensi yang actionable, empatik, dan sesuai SOP Dinsos. Fokus pada akar masalah dan langkah konkret."
                             </div>
                         </div>
                     </div>
@@ -680,12 +775,11 @@
             </div>
         </div>
 
-        <!-- SECTION 4: MONITORING INTEGRASI DATA -->
         <div class="space-y-4">
             <div class="flex items-center justify-between border-b border-slate-800 pb-2">
                 <div class="flex items-center space-x-2">
                     <i data-lucide="plug" class="w-5 h-5 text-sky-400"></i>
-                    <h2 class="font-semibold text-base text-slate-200">4. Monitoring Integrasi Data (Cross-System Health)</h2>
+                    <h2 class="font-semibold text-base text-slate-200">5. Monitoring Integrasi Data (Cross-System Health)</h2>
                 </div>
                 <div class="flex items-center space-x-3">
                     <span class="text-[10px] text-slate-500">Last sync: 14 Agu 2026, 10:42 WIB</span>
@@ -1033,7 +1127,7 @@
             siti: {
                 id: '#SR-9921', name: 'Siti Aminah', age: 14,
                 location: 'Kec. Cicalengka, Kab. Bandung',
-                riskScore: 0.92, anomaly: 'NIK Ganda (DTKS Kab. Garut)',
+                riskScore: 0.92, anomaly: 'NIK Ganda (DTSEN Kab. Garut)',
                 anomalyType: 'NIK Ganda', severity: 'rose',
                 lmsActivity: '12% (Kritis)', cluster: 'Butuh Pendampingan',
                 report: `📋 <b>LAPORAN INTERVENSI DINI — SR-QA INSIGHT</b><br>
@@ -1041,7 +1135,7 @@
 📍 Kec. Cicalengka, Kab. Bandung<br><br>
 <b>🔍 DIAGNOSIS AI:</b><br>
 Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
-1. <b>Anomali Data:</b> NIK tercatat ganda di DTKS Kab. Bandung & Kab. Garut.<br>
+1. <b>Anomali Data:</b> NIK tercatat ganda di DTSEN Kab. Bandung & Kab. Garut.<br>
 2. <b>Engagement:</b> LMS turun 80% dalam 14 hari (62% → 12%).<br>
 3. <b>Absensi:</b> Tidak hadir 9 dari 12 hari sekolah.<br><br>
 <b>🎯 REKOMENDASI (SOP Dinsos):</b><br>
@@ -1054,14 +1148,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             budi: {
                 id: '#SR-8812', name: 'Budi Santoso', age: 15,
                 location: 'Kec. Wamena, Kab. Jayawijaya (3T)',
-                riskScore: 0.78, anomaly: 'Domisili Invalid (DTKS Jayapura)',
+                riskScore: 0.78, anomaly: 'Domisili Invalid (DTSEN Jayapura)',
                 anomalyType: 'Domisili Invalid', severity: 'amber',
                 lmsActivity: '28% (Rendah)', cluster: 'Perlu Aksesibilitas Digital',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-8812 | Budi Santoso (15 th)<br>
 📍 Kec. Wamena, Kab. Jayawijaya (3T)<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.78)</b>.<br>
-1. Domisili Wamena, DTKS terdaftar Jayapura.<br>
+1. Domisili Wamena, DTSEN terdaftar Jayapura.<br>
 2. Wilayah 3T dengan konektivitas &lt;2 Mbps.<br>
 3. Login LMS hanya 22:00-00:00 (keterbatasan kuota).<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1114,18 +1208,18 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             rizky: {
                 id: '#SR-3456', name: 'Rizky Pratama', age: 16,
                 location: 'Kec. Maratua, Kab. Berau, Kalimantan Timur',
-                riskScore: 0.88, anomaly: 'Data Ganda DTKS',
-                anomalyType: 'DTKS Ganda', severity: 'amber',
+                riskScore: 0.88, anomaly: 'Data Ganda DTSEN',
+                anomalyType: 'DTSEN Ganda', severity: 'amber',
                 lmsActivity: '15% (Kritis)', cluster: 'Wilayah 3T',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-3456 | Rizky Pratama (16 th)<br>
 📍 Kec. Maratua, Kab. Berau (Pulau Kecil)<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.88)</b>.<br>
-1. Data ganda di DTKS ( tercatat 2 keluarga asuh).<br>
+1. Data ganda di DTSEN ( tercatat 2 keluarga asuh).<br>
 2. Lokasi pulau kecil, akses terbatas.<br>
 3. Hanya 15% interaksi LMS (keterbatasan sinyal).<br><br>
 <b>🎯 REKOMENDASI:</b><br>
-✅ Verifikasi silang DTKS Berau.<br>
+✅ Verifikasi silang DTSEN Berau.<br>
 ✅ Berikan perangkat tablet + solar charger.<br>
 ✅ Subsidi kuota satelit.<br>
 ✅ Pendampingan guru keliling.<br>
@@ -1161,7 +1255,7 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
 🆔 #SR-5891 | Agus Setiawan (15 th)<br>
 📍 Kec. Muting, Kab. Merauke (Perbatasan PNG)<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>SANGAT TINGGI (0.94)</b>.<br>
-1. Domisili sekolah Merauke, DTKS Boven Digoel.<br>
+1. Domisili sekolah Merauke, DTSEN Boven Digoel.<br>
 2. Lokasi perbatasan dengan sinyal minim.<br>
 3. Hanya 5% interaksi LMS (sangat kritis).<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1194,14 +1288,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             firman: {
                 id: '#SR-7294', name: 'Firman Hidayat', age: 14,
                 location: 'Kec. Palu Barat, Kota Palu',
-                riskScore: 0.82, anomaly: 'NIK Ganda (DTKS Jakarta)',
+                riskScore: 0.82, anomaly: 'NIK Ganda (DTSEN Jakarta)',
                 anomalyType: 'NIK Ganda', severity: 'rose',
                 lmsActivity: '22% (Kritis)', cluster: 'Bantuan Ekonomi',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-7294 | Firman Hidayat (14 th)<br>
 📍 Kec. Palu Barat, Kota Palu<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.82)</b>.<br>
-1. NIK tercatat di DTKS Palu & Jakarta Utara.<br>
+1. NIK tercatat di DTSEN Palu & Jakarta Utara.<br>
 2. Keluarga pasca-bencana Sulteng 2018.<br>
 3. Tidak pernah submit tugas LMS.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1234,14 +1328,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             doni: {
                 id: '#SR-9632', name: 'Doni Irawan', age: 16,
                 location: 'Kec. Medan Labuhan, Kota Medan',
-                riskScore: 0.89, anomaly: 'Data Ganda DTKS',
-                anomalyType: 'DTKS Ganda', severity: 'rose',
+                riskScore: 0.89, anomaly: 'Data Ganda DTSEN',
+                anomalyType: 'DTSEN Ganda', severity: 'rose',
                 lmsActivity: '11% (Kritis)', cluster: 'Bantuan Ekonomi',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-9632 | Doni Irawan (16 th)<br>
 📍 Kec. Medan Labuhan, Kota Medan<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.89)</b>.<br>
-1. Ganda di DTKS Medan & Deli Serdang.<br>
+1. Ganda di DTSEN Medan & Deli Serdang.<br>
 2. Bekerja paruh waktu di pelabuhan.<br>
 3. Engagement LMS sangat rendah (11%).<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1261,7 +1355,7 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
 🆔 #SR-1357 | Maya Puspita (13 th)<br>
 📍 Kec. Kupang Tengah, Kab. Kupang, NTT<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.77)</b>.<br>
-1. Domisili Kupang, DTKS Alor.<br>
+1. Domisili Kupang, DTSEN Alor.<br>
 2. Keluarga migran musiman.<br>
 3. LMS 25%, akses internet tidak stabil.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1274,14 +1368,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             heru: {
                 id: '#SR-2580', name: 'Heru Prabowo', age: 14,
                 location: 'Kec. Cilincing, Jakarta Utara',
-                riskScore: 0.84, anomaly: 'NIK Ganda (DTKS Bekasi)',
+                riskScore: 0.84, anomaly: 'NIK Ganda (DTSEN Bekasi)',
                 anomalyType: 'NIK Ganda', severity: 'rose',
                 lmsActivity: '19% (Kritis)', cluster: 'Butuh Pendampingan',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-2580 | Heru Prabowo (14 th)<br>
 📍 Kec. Cilincing, Jakarta Utara<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.84)</b>.<br>
-1. NIK ganda di DTKS Jakut & Bekasi.<br>
+1. NIK ganda di DTSEN Jakut & Bekasi.<br>
 2. Keluarga pemulung di TPST Bantargebang.<br>
 3. LMS 19%, absensi tinggi.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1361,7 +1455,7 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
 🆔 #SR-6024 | Reza Mahendra (16 th)<br>
 📍 Kec. Tembagapura, Kab. Mimika (Zona Tambang)<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>SANGAT TINGGI (0.93)</b>.<br>
-1. Domisili zona tambang, DTKS Agimuga.<br>
+1. Domisili zona tambang, DTSEN Agimuga.<br>
 2. Akses internet sangat terbatas.<br>
 3. LMS 7%, hampir dropout total.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1374,14 +1468,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             linda: {
                 id: '#SR-7135', name: 'Linda Kusuma', age: 14,
                 location: 'Kec. Pontianak Tenggara, Kota Pontianak',
-                riskScore: 0.74, anomaly: 'Data Ganda DTKS',
-                anomalyType: 'DTKS Ganda', severity: 'amber',
+                riskScore: 0.74, anomaly: 'Data Ganda DTSEN',
+                anomalyType: 'DTSEN Ganda', severity: 'amber',
                 lmsActivity: '36% (Rendah)', cluster: 'Bantuan Ekonomi',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-7135 | Linda Kusuma (14 th)<br>
 📍 Kec. Pontianak Tenggara, Kota Pontianak<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.74)</b>.<br>
-1. Ganda di DTKS Pontianak & Kubu Raya.<br>
+1. Ganda di DTSEN Pontianak & Kubu Raya.<br>
 2. Keluarga nelayan tradisional.<br>
 3. LMS 36%, aktif saat cuaca buruk.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1434,14 +1528,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             andi: {
                 id: '#SR-1468', name: 'Andi Saputra', age: 14,
                 location: 'Kec. Mandai, Kab. Maros, Sulawesi Selatan',
-                riskScore: 0.81, anomaly: 'NIK Ganda (DTKS Gowa)',
+                riskScore: 0.81, anomaly: 'NIK Ganda (DTSEN Gowa)',
                 anomalyType: 'NIK Ganda', severity: 'rose',
                 lmsActivity: '21% (Kritis)', cluster: 'Bantuan Ekonomi',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-1468 | Andi Saputra (14 th)<br>
 📍 Kec. Mandai, Kab. Maros, Sulsel<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.81)</b>.<br>
-1. NIK ganda di DTKS Maros & Gowa.<br>
+1. NIK ganda di DTSEN Maros & Gowa.<br>
 2. Anak pekerja bandara.<br>
 3. LMS 21%, sering offline.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1474,14 +1568,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             joko: {
                 id: '#SR-3680', name: 'Joko Susilo', age: 16,
                 location: 'Kec. Semarang Barat, Kota Semarang',
-                riskScore: 0.75, anomaly: 'Data Ganda DTKS',
-                anomalyType: 'DTKS Ganda', severity: 'amber',
+                riskScore: 0.75, anomaly: 'Data Ganda DTSEN',
+                anomalyType: 'DTSEN Ganda', severity: 'amber',
                 lmsActivity: '34% (Rendah)', cluster: 'Bantuan Ekonomi',
                 report: `📋 <b>LAPORAN INTERVENSI — SR-QA INSIGHT</b><br>
 🆔 #SR-3680 | Joko Susilo (16 th)<br>
 📍 Kec. Semarang Barat, Kota Semarang<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.75)</b>.<br>
-1. Ganda di DTKS Semarang & Demak.<br>
+1. Ganda di DTSEN Semarang & Demak.<br>
 2. Anak buruh pelabuhan Tanjung Emas.<br>
 3. LMS 34%, bekerja paruh waktu.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1501,7 +1595,7 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
 🆔 #SR-4791 | Nia Kurniawati (14 th)<br>
 📍 Kec. Mataram, Kota Mataram, NTB<br><br>
 <b>🔍 DIAGNOSIS:</b> Risiko <b>TINGGI (0.80)</b>.<br>
-1. Domisili Mataram, DTKS Lombok Utara (pasca gempa).<br>
+1. Domisili Mataram, DTSEN Lombok Utara (pasca gempa).<br>
 2. Keluarga masih di hunian sementara.<br>
 3. LMS 24%, trauma masih terasa.<br><br>
 <b>🎯 REKOMENDASI:</b><br>
@@ -1534,6 +1628,23 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
         };
 
         // ============================================================
+        // DATA DUMMY MODEL PERANGKINGAN MPI (MULTIDIMENSIONAL POVERTY)
+        // ============================================================
+        const mpiCandidates = [
+            { id: '#SR-REG-001', name: 'Asep Kurnia', school: 'SR Bandung', desil: 'Desil 1 (Sangat Rentan)', score: 94.5, status: 'LOLOS KUOTA', social: 98, edu: 95, econ: 90, living: 92, geo: 85 },
+            { id: '#SR-REG-002', name: 'Maria Kogoya', school: 'SR Jayapura', desil: 'Desil 1 (Sangat Rentan)', score: 92.8, status: 'LOLOS KUOTA', social: 90, edu: 96, econ: 88, living: 90, geo: 100 },
+            { id: '#SR-REG-003', name: 'Rahmat Hidayat', school: 'SR Medan', desil: 'Desil 1 (Sangat Rentan)', score: 89.2, status: 'LOLOS KUOTA', social: 92, edu: 88, econ: 94, living: 85, geo: 75 },
+            { id: '#SR-REG-004', name: 'Siti Badriah', school: 'SR Bandung', desil: 'Desil 1 (Sangat Rentan)', score: 86.7, status: 'LOLOS KUOTA', social: 85, edu: 90, econ: 85, living: 88, geo: 80 },
+            { id: '#SR-REG-005', name: 'Yohanes Wama', school: 'SR Jayapura', desil: 'Desil 2 (Rentan)', score: 83.1, status: 'LOLOS KUOTA', social: 80, edu: 82, econ: 80, living: 85, geo: 95 },
+            // Cutoff threshold (Kuota 5 Siswa untuk Demo)
+            { id: '#SR-REG-006', name: 'Bambang Supriadi', school: 'SR Medan', desil: 'Desil 2 (Rentan)', score: 78.4, status: 'CADANGAN 1', social: 75, edu: 80, econ: 78, living: 80, geo: 70 },
+            { id: '#SR-REG-007', name: 'Novi Larasati', school: 'SR Bandung', desil: 'Desil 2 (Rentan)', score: 74.2, status: 'CADANGAN 2', social: 72, edu: 75, econ: 70, living: 78, geo: 65 },
+            { id: '#SR-REG-008', name: 'Dedi Mulyadi', school: 'SR Medan', desil: 'Desil 3 (Hampir Rentan)', score: 68.9, status: 'CADANGAN 3', social: 65, edu: 70, econ: 68, living: 72, geo: 60 }
+        ];
+
+        let prophetChart, xgboostChart, kmeansChart, mpiRadarChart;
+
+        // ============================================================
         // INISIALISASI LUCIDE ICONS
         // ============================================================
         lucide.createIcons();
@@ -1552,6 +1663,82 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
         }
 
         // ============================================================
+        // RENDER TABEL & RADAR CHART PERANGKINGAN MPI
+        // ============================================================
+        function renderMPITable(filterSchool = 'all') {
+            const tbody = document.getElementById('mpiTableBody');
+            tbody.innerHTML = '';
+
+            const filtered = filterSchool === 'all' 
+                ? mpiCandidates 
+                : mpiCandidates.filter(c => c.school === filterSchool);
+
+            filtered.forEach((c, index) => {
+                const isLolos = c.status.includes('LOLOS');
+                const badgeColor = isLolos 
+                    ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' 
+                    : 'bg-amber-500/10 text-amber-400 border-amber-500/20';
+
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-slate-700/30 transition cursor-pointer';
+                row.onclick = () => selectMPICandidate(c);
+                row.innerHTML = `
+                    <td class="py-3 px-3 font-bold ${index < 5 ? 'text-cyan-400' : 'text-slate-500'}">#${index + 1}</td>
+                    <td class="py-3 px-3">
+                        <div class="font-semibold text-slate-200">${c.name}</div>
+                        <div class="text-[10px] text-slate-500">${c.id}</div>
+                    </td>
+                    <td class="py-3 px-3 text-slate-300">${c.school}</td>
+                    <td class="py-3 px-3 text-slate-400">${c.desil}</td>
+                    <td class="py-3 px-3 font-bold text-cyan-400">${c.score.toFixed(1)}</td>
+                    <td class="py-3 px-3">
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold border ${badgeColor}">
+                            ${c.status}
+                        </span>
+                    </td>
+                    <td class="py-3 px-3 text-right">
+                        <button onclick="event.stopPropagation(); alert('Detail skor MPI ${c.name}:\\n• Social: ${c.social}\\n• Edu: ${c.edu}\\n• Econ: ${c.econ}\\n• Living: ${c.living}\\n• Geo: ${c.geo}')" class="px-2 py-1 bg-slate-700 hover:bg-slate-600 rounded text-[10px] text-slate-200">
+                            Detail
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+
+                // Sisipkan garis batas kuota setelah peringkat 5
+                if (index === 4 && filterSchool === 'all') {
+                    const cutoffRow = document.createElement('tr');
+                    cutoffRow.innerHTML = `
+                        <td colspan="7" class="py-2 px-3 text-center border-y border-rose-500/40 bg-rose-500/10">
+                            <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest flex items-center justify-center">
+                                <i data-lucide="scissors" class="w-3 h-3 mr-1.5"></i>
+                                Garis Batas Kuota Utama Penerimaan (Quota Cut-Off)
+                            </span>
+                        </td>
+                    `;
+                    tbody.appendChild(cutoffRow);
+                }
+            });
+            lucide.createIcons();
+        }
+
+        function filterMPITable() {
+            const val = document.getElementById('mpiSchoolFilter').value;
+            renderMPITable(val);
+        }
+
+        function selectMPICandidate(candidate) {
+            document.getElementById('mpiCandidateName').textContent = `Calon: ${candidate.id} (${candidate.name})`;
+            if (mpiRadarChart) {
+                mpiRadarChart.data.datasets[0].data = [candidate.social, candidate.edu, candidate.econ, candidate.living, candidate.geo];
+                mpiRadarChart.update();
+            }
+        }
+
+        function exportMPIList() {
+            alert('📄 Mengekspor Berita Acara & SK Penetapan Siswa Lolos Seleksi MPI dalam format Docx/PDF...');
+        }
+
+        // ============================================================
         // GENERATE ANOMALY LIST & SELECT OPTIONS
         // ============================================================
         function renderAnomalyList() {
@@ -1561,17 +1748,14 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             anomalyList.innerHTML = '';
             studentSelect.innerHTML = '';
             
-            // Sort by risk score descending
             const sortedStudents = Object.entries(studentProfiles).sort(
                 (a, b) => b[1].riskScore - a[1].riskScore
             );
             
             sortedStudents.forEach(([key, profile]) => {
-                // Determine border color based on severity
                 const borderColor = profile.severity === 'rose' ? 'rose-500/30' : 'amber-500/30';
                 const textColor = profile.severity === 'rose' ? 'rose-400' : 'amber-400';
                 
-                // Anomaly card
                 const card = document.createElement('div');
                 card.className = `p-2.5 bg-slate-900/60 border border-${borderColor} rounded-lg text-xs space-y-1 cursor-pointer hover:bg-slate-900 transition`;
                 card.onclick = () => selectStudent(key);
@@ -1585,7 +1769,6 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
                 `;
                 anomalyList.appendChild(card);
                 
-                // Select option
                 const option = document.createElement('option');
                 option.value = key;
                 option.textContent = `${profile.id} - ${profile.name} (${profile.anomalyType})`;
@@ -1593,14 +1776,12 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             });
         }
 
-        // Panggil render saat load
         renderAnomalyList();
+        renderMPITable();
 
         // ============================================================
         // THEME MANAGEMENT
         // ============================================================
-        let prophetChart, xgboostChart, kmeansChart;
-        
         function getPreferredTheme() {
             const stored = localStorage.getItem('srqa-theme');
             if (stored) return stored;
@@ -1668,6 +1849,13 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
                     ? ['rgba(79, 70, 229, 0.7)', 'rgba(14, 165, 233, 0.7)', 'rgba(217, 119, 6, 0.7)']
                     : ['rgba(99, 102, 241, 0.6)', 'rgba(56, 189, 248, 0.6)', 'rgba(251, 191, 36, 0.6)'];
                 kmeansChart.update('none');
+            }
+
+            if (mpiRadarChart) {
+                mpiRadarChart.options.plugins.legend.labels.color = textColor;
+                mpiRadarChart.options.scales.r.grid.color = gridColor;
+                mpiRadarChart.options.scales.r.pointLabels.color = textColor;
+                mpiRadarChart.update('none');
             }
         }
 
@@ -1754,6 +1942,37 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
                 maintainAspectRatio: false,
                 plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 11 } } } },
                 scales: { r: { ticks: { display: false }, grid: { color: '#334155' } } }
+            }
+        });
+
+        const ctxMPIRadar = document.getElementById('mpiRadarChart').getContext('2d');
+        mpiRadarChart = new Chart(ctxMPIRadar, {
+            type: 'radar',
+            data: {
+                labels: ['Sosial & Bansos', 'Pendidikan (ATS)', 'Ekonomi Wali', 'Sanitasi/Rumah', 'Geografis 3T'],
+                datasets: [{
+                    label: 'Tingkat Deprivasi (%)',
+                    data: [98, 95, 90, 92, 85],
+                    backgroundColor: 'rgba(6, 182, 212, 0.25)',
+                    borderColor: '#06b6d4',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#06b6d4'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    r: {
+                        min: 0,
+                        max: 100,
+                        ticks: { display: false },
+                        grid: { color: '#334155' },
+                        angleLines: { color: '#334155' },
+                        pointLabels: { color: '#94a3b8', font: { size: 10 } }
+                    }
+                }
             }
         });
 
@@ -1875,7 +2094,7 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
                 <div class="w-6 h-6 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0">
                     <i data-lucide="sparkles" class="w-3 h-3"></i>
                 </div>
-                <div class="bg-purple-900/30 border border-purple-500/20 rounded-lg p-2 text-xs text-slate-400 italic">Sedang menganalisis data dari 25 siswa...</div>
+                <div class="bg-purple-900/30 border border-purple-500/20 rounded-lg p-2 text-xs text-slate-400 italic">Sedang menganalisis data RAG...</div>
             `;
             history.appendChild(thinking);
             history.scrollTop = history.scrollHeight;
@@ -1883,12 +2102,13 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
             setTimeout(() => {
                 let response = '';
                 const q = query.toLowerCase();
-                if (q.includes('integrasi') || q.includes('siakad') || q.includes('setara')) {
+                if (q.includes('mpi') || q.includes('rangking') || q.includes('kuota') || q.includes('seleksi')) {
+                    response = 'Algoritma perangkingan MPI mengukur 5 dimensi deprivasi (Sosial 30%, Pendidikan 25%, Ekonomi 20%, Rumah 15%, Geografis 10%). Dari 1.250 pendaftar, <b>310 pendaftar masuk Prioritas 1 (MPI ≥ 80.0)</b> dan otomatis mengisi kuota utama.';
+                } else if (q.includes('integrasi') || q.includes('siakad') || q.includes('setara')) {
                     response = 'Integrasi sistem Sekolah Rakyat melibatkan 3 titik kritis:<br>1. <b>LMS ↔ SIAKAD</b> (status CRITICAL - 38.7% error rate)<br>2. <b>SETARA ↔ LMS</b> (status DEGRADED - 12.4% error rate)<br>3. <b>SETARA ↔ SIAKAD</b> (status HEALTHY - 3.2% error rate)<br>Total 847.392 API calls dalam 24 jam terakhir.';
                 } else if (q.includes('dropout') || q.includes('naik')) {
                     response = 'Berdasarkan data XGBoost, kenaikan dropout 12% pada Juli 2026 berkorelasi dengan <b>periode libur semester</b> dan <b>penurunan interaksi LMS</b> sebesar 45%. Klaster wilayah yang paling terdampak: <b>Zone 3 (Timur)</b>.';
                 } else if (q.includes('anomali') || q.includes('nik')) {
-                    // Hitung breakdown dari 25 siswa
                     const breakdown = {};
                     Object.values(studentProfiles).forEach(p => {
                         breakdown[p.anomalyType] = (breakdown[p.anomalyType] || 0) + 1;
@@ -1899,10 +2119,8 @@ Risiko putus sekolah <b>SANGAT TINGGI (0.92)</b>.<br>
                     response = `Sistem Isolation Forest mendeteksi <b>25 anomali data</b> dari 25.607 record (0.098%). Breakdown: ${breakdownText}. Semua telah di-flagging untuk verifikasi lapangan.`;
                 } else if (q.includes('intervensi') || q.includes('efektif')) {
                     response = 'Intervensi paling efektif berdasarkan historical success rate:<br>1. <b>Pendampingan sosial</b>: 78% success rate<br>2. <b>Subsidi kuota + offline LMS</b>: 65% success rate<br>3. <b>Bantuan modal belajar</b>: 52% success rate';
-                } else if (q.includes('berapa') && q.includes('siswa')) {
-                    response = 'Saat ini <b>25 siswa</b> ter-flagging oleh sistem Isolation Forest dengan distribusi risiko:<br>• <b>10 siswa</b> risiko sangat tinggi (&gt;0.85)<br>• <b>11 siswa</b> risiko tinggi (0.70-0.85)<br>• <b>4 siswa</b> risiko sedang (0.65-0.70)<br>Dominasi anomali: NIK Ganda (5), Domisili Invalid (6), NIK Non-Standard (4).';
                 } else {
-                    response = 'Pertanyaan Anda sedang diproses oleh SR-QA RAG pipeline. Untuk demo, coba tanyakan tentang: <i>"status integrasi sistem"</i>, <i>"mengapa dropout naik"</i>, <i>"jumlah anomali NIK"</i>, <i>"berapa siswa yang flagged"</i>, atau <i>"intervensi paling efektif"</i>.';
+                    response = 'Pertanyaan Anda sedang diproses oleh SR-QA RAG pipeline. Coba tanyakan tentang: <i>"metode perangkingan MPI"</i>, <i>"status integrasi sistem"</i>, <i>"mengapa dropout naik"</i>, atau <i>"jumlah anomali NIK"</i>.';
                 }
 
                 thinking.remove();
